@@ -14,7 +14,7 @@ class Url < ActiveRecord::Base
     else
       id = 1
     end
-    self.shortened_url = characters.sample(2).join + (id + 1).to_s + characters.sample(2).join
+    self.shortened_url ||= characters.sample(2).join + (id + 1).to_s + characters.sample(2).join
   end
 
 end
